@@ -1,0 +1,27 @@
+{
+  "Actor": 
+  {
+    "types": ["character"],
+    "character": {
+      "biography": "",
+      "theOnlyStat": "",
+      "style": "",
+      "role": "",
+      "goal": ""
+    }
+  },
+
+  "Item": 
+  {
+    "types": ["item"],
+    "item": 
+    {
+      "description": "",
+      "quantity": 1,
+      "weight": 0,
+      "attributes": 
+      {}
+    }
+  }
+
+}

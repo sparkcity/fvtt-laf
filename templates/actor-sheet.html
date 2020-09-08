@@ -1,0 +1,75 @@
+<form class="{{cssClass}}" autocomplete="off">
+
+    {{!-- Sheet Header --}}
+    <header class="sheet-header">
+        <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
+        <div class="header-fields">
+            <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name"/></h1>
+            <div class="subfields">
+                <span> {{localize LAF.Name}}: </span>
+                <select name="data.theOnlyStat" data-dtype="Number">
+                    {{#select data.theOnlyStat}}
+                      <option value="2">2<option>
+                      <option value="3">3<option>
+                      <option value="4">4<option>
+                      <option value="5">5<option>
+                    {{/select}}
+                  </select>
+                <span>{{localize LAF.Style}}: </span>
+                <input class="styleinput" name="data.style" type="text" value="{{data.style}}" placeholder="Style"/>
+            </div>
+            <div class="subfields">
+                <span>{{localize LAF.Role}}: </span>
+                <input class="roleinput" name="data.role" type="text" value="{{data.role}}" placeholder="Role"/>
+                <span>{{localize LAF.Goal}}: </span>
+                <input class="goalinput" name="data.goal" type="text" value="{{data.goal}}" placeholder="Goal"/>
+            </div>
+        </div>
+    </header>
+
+    {{!-- Sheet Tab Navigation --}}
+    <nav class="sheet-tabs tabs" data-group="primary">
+        <a class="item" data-tab="description">Description</a>
+        <a class="item" data-tab="items">Items</a>
+    </nav>
+
+    {{!-- Sheet Body --}}
+    <section class="sheet-body">
+
+        {{!-- Biography Tab --}}
+        <div class="tab biography" data-group="primary" data-tab="description">
+            {{editor content=data.biography target="data.biography" button=true owner=owner editable=editable}}
+        </div>
+
+        {{!-- Owned Items Tab --}}
+        <div class="tab items" data-group="primary" data-tab="items">
+            <ol class="item-list">
+            {{#each actor.items as |item id|}}
+                <li class="item flexrow" data-item-id="{{item._id}}">
+                    <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
+                    <h4 class="item-name">{{item.name}}</h4>
+                    {{!-- Iterate through all attributes on the item and output buttons for any that are formula. --}}
+                    <div class="item-buttons">
+                      {{#each item.data.attributes as |itemAttr key|}}
+                        {{#if (eq itemAttr.dtype "Formula")}}
+                          {{!-- Use the items.name.key format for shorthand. --}}
+                          {{#if ../../shorthand}}
+                            <button class="item-button rollable" data-roll="@items.{{slugify item.name}}.{{key}}" title="{{itemAttr.value}}">{{itemAttr.label}}</button>
+                          {{!-- Use the items.name.attributes.key.value format otherwise. --}}
+                          {{else}}
+                            <button class="item-button rollable" data-roll="@items.{{slugify item.name}}.attributes.{{key}}.value" title="{{itemAttr.value}}">{{itemAttr.label}}</button>
+                          {{/if}}
+                        {{/if}}
+                      {{/each}}
+                    </div>
+                    <div class="item-controls">
+                        <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
+                        <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+                    </div>
+                </li>
+            {{/each}}
+            </ol>
+        </div>
+    </section>
+</form>
+
