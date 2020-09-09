@@ -15,7 +15,14 @@ import { preloadHandlebarsTemplates } from "./templates.js";
 /* -------------------------------------------- */
 
 Hooks.once("init", async function() {
-  console.log(`Initializing Simple Worldbuilding System`);
+  console.log("Localization...");
+  game.i18n.localize("SIMPLE.Name");
+  game.i18n.localize("SIMPLE.Style");
+  game.i18n.localize("SIMPLE.Goal");
+  game.i18n.localize("SIMPLE.Number");
+  game.i18n.localize("SIMPLE.Role");
+
+  console.log(`Initializing Lasers & Feelings System`);
 
   /**
    * Set an initiative formula for the system. This will be updated later.

@@ -19,9 +19,9 @@ export class SimpleActorSheet extends ActorSheet {
   }
 
   /* -------------------------------------------- */
-
+/*fix this at some point getdata shouldn't need to be commented out*/
   /** @override */
-  getData() {
+/*   getData() {
     const data = super.getData();
     data.dtypes = ATTRIBUTE_TYPES;
     for ( let attr of Object.values(data.data.attributes) ) {
@@ -30,7 +30,7 @@ export class SimpleActorSheet extends ActorSheet {
     }
     data.shorthand = !!game.settings.get("laf", "macroShorthand");
     return data;
-  }
+  } */
 
   /* -------------------------------------------- */
 
