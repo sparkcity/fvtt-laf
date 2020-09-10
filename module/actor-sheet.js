@@ -87,12 +87,10 @@ export class SimpleActorSheet extends ActorSheet {
     html.find('#feelingsButton3').click(ev => {
       let button = $(ev.currentTarget);
       let r = new Roll("3d6");
-      evalRolls(r);
       r.roll().toMessage({
         user: game.user._id,
         speaker: ChatMessage.getSpeaker({ actor: this.actor }),
         flavor: `<h3>Feelings Roll: ${button.text()}</h3>`,
-        content: "Cat"
       });
     });
 

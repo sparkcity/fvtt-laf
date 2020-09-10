@@ -54,6 +54,10 @@
   padding-left: 25px;
 }
 
+.laf .sheet-header .numbersLabel{
+  font-family: Atmospheric;
+}
+
 
 .laf .sheet-header .subfields {
   display: flex;
@@ -79,6 +83,10 @@
 
 .laf .sheet-body .column .bodyfields .goalinput {
   width: 270px;
+}
+
+.laf .sheet-header .subfields .subfieldsBlock .numberinput {
+  width: 80px;
 }
 
 .row {
