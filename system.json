@@ -24,7 +24,8 @@
     }
   ],
   "esmodules": [
-    "module/simple.js"
+    "module/simple.js",
+    "module/lasersandfeelings.js"
   ],
   "styles": [
     "styles/simple.css"

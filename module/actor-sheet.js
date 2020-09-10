@@ -19,18 +19,17 @@ export class SimpleActorSheet extends ActorSheet {
   }
 
   /* -------------------------------------------- */
-/*fix this at some point getdata shouldn't need to be commented out*/
   /** @override */
-/*   getData() {
+   getData() {
     const data = super.getData();
     data.dtypes = ATTRIBUTE_TYPES;
-    for ( let attr of Object.values(data.data.attributes) ) {
+/*     for ( let attr of Object.values(data.data.attributes) ) {
       attr.isCheckbox = attr.dtype === "Boolean";
       attr.isResource = attr.dtype === "Resource";
-    }
+    } */
     data.shorthand = !!game.settings.get("laf", "macroShorthand");
     return data;
-  } */
+  }
 
   /* -------------------------------------------- */
 
@@ -39,33 +38,64 @@ export class SimpleActorSheet extends ActorSheet {
     super.activateListeners(html);
 
     // Handle rollable attributes.
-    html.find('.items .rollable').click(ev => {
+    html.find('#lasersButton1').click(ev => {
       let button = $(ev.currentTarget);
-      let r = new Roll(button.data('roll'), this.actor.getRollData());
-      const li = button.parents(".item");
-      const item = this.actor.getOwnedItem(li.data("itemId"));
+      let r = new Roll("1d6");
       r.roll().toMessage({
         user: game.user._id,
         speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-        flavor: `<h2>${item.name}</h2><h3>${button.text()}</h3>`
+        flavor: `<h3>Lasers Roll: ${button.text()}</h3>`
       });
     });
 
-    // Everything below here is only needed if the sheet is editable
-    if (!this.options.editable) return;
-
-    // Update Inventory Item
-    html.find('.item-edit').click(ev => {
-      const li = $(ev.currentTarget).parents(".item");
-      const item = this.actor.getOwnedItem(li.data("itemId"));
-      item.sheet.render(true);
+    html.find('#lasersButton2').click(ev => {
+      let button = $(ev.currentTarget);
+      let r = new Roll("2d6");
+      r.roll().toMessage({
+        user: game.user._id,
+        speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+        flavor: `<h3>Lasers Roll: ${button.text()}</h3>`
+      });
     });
 
-    // Delete Inventory Item
-    html.find('.item-delete').click(ev => {
-      const li = $(ev.currentTarget).parents(".item");
-      this.actor.deleteOwnedItem(li.data("itemId"));
-      li.slideUp(200, () => this.render(false));
+    html.find('#lasersButton3').click(ev => {
+      let button = $(ev.currentTarget);
+      let r = new Roll("3d6");
+      r.roll().toMessage({
+        user: game.user._id,
+        speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+        flavor: `<h3>Lasers Roll: ${button.text()}</h3>`
+      });
+    });
+
+    html.find('#feelingsButton1').click(ev => {
+      let button = $(ev.currentTarget);
+      let r = new Roll("1d6");
+      r.roll().toMessage({
+        user: game.user._id,
+        speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+        flavor: `<h3>Feelings Roll: ${button.text()}</h3>`
+      });
+    });
+
+    html.find('#feelingsButton2').click(ev => {
+      let button = $(ev.currentTarget);
+      let r = new Roll("2d6");
+      r.roll().toMessage({
+        user: game.user._id,
+        speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+        flavor: `<h3>Feelings Roll: ${button.text()}</h3>`
+      });
+    });
+
+    html.find('#feelingsButton3').click(ev => {
+      let button = $(ev.currentTarget);
+      let r = new Roll("3d6");
+      r.roll().toMessage({
+        user: game.user._id,
+        speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+        flavor: `<h3>Feelings Roll: ${button.text()}</h3>`
+      });
     });
 
   }
