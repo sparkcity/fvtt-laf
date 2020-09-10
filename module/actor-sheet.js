@@ -20,21 +20,17 @@ export class SimpleActorSheet extends ActorSheet {
 
   /* -------------------------------------------- */
   /** @override */
-   getData() {
-    const data = super.getData();
-    data.dtypes = ATTRIBUTE_TYPES;
-/*     for ( let attr of Object.values(data.data.attributes) ) {
-      attr.isCheckbox = attr.dtype === "Boolean";
-      attr.isResource = attr.dtype === "Resource";
-    } */
-    data.shorthand = !!game.settings.get("laf", "macroShorthand");
-    return data;
-  }
+  getData() {
+    const  data = super.getData();
+    data.dtypes = ["String", "Number", "Boolean"];
+    return  data;
+    }
 
   /* -------------------------------------------- */
 
   /** @override */
 	activateListeners(html) {
+    
     super.activateListeners(html);
 
     // Handle rollable attributes.
@@ -91,12 +87,15 @@ export class SimpleActorSheet extends ActorSheet {
     html.find('#feelingsButton3').click(ev => {
       let button = $(ev.currentTarget);
       let r = new Roll("3d6");
+      evalRolls(r);
       r.roll().toMessage({
         user: game.user._id,
         speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-        flavor: `<h3>Feelings Roll: ${button.text()}</h3>`
+        flavor: `<h3>Feelings Roll: ${button.text()}</h3>`,
+        content: "Cat"
       });
     });
 
-  }
+  }//end of activatelisteners
+
 }

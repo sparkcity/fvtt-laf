@@ -10,8 +10,9 @@ export class SimpleActor extends Actor {
     const shorthand = game.settings.get("laf", "macroShorthand");
     const formulaAttributes = [];
 
-    // Handle formula attributes when the short syntax is disabled.
-    this._applyShorthand(data, formulaAttributes, shorthand);
+    //@TODO: Commented out to allow roll functionality, figure this nonesense out
+    //Handle formula attributes when the short syntax is disabled.
+    //this._applyShorthand(data, formulaAttributes, shorthand);
 
     // Map all items data using their slugified names
     this._applyItems(data, shorthand);
@@ -31,12 +32,13 @@ export class SimpleActor extends Actor {
   }
 
   /**
+   * @TODO: Commented out to allow roll functionality, figure this nonesense out
    * Apply shorthand syntax to actor roll data.
    * @param {Object} data The actor's data object.
    * @param {Array} formulaAttributes Array of attributes that are derived formulas.
    * @param {Boolean} shorthand Whether or not the shorthand syntax is used.
    */
-  _applyShorthand(data, formulaAttributes, shorthand) {
+/*   _applyShorthand(data, formulaAttributes, shorthand) {
     // Handle formula attributes when the short syntax is disabled.
     for ( let [k, v] of Object.entries(data.attributes) ) {
       // Make an array of formula attributes for later reference.
@@ -48,7 +50,7 @@ export class SimpleActor extends Actor {
         }
       }
     }
-  }
+  } */
 
   /**
    * Add items to the actor roll data object. Handles regular and shorthand
