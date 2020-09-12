@@ -23,5 +23,8 @@
 
   "SIMPLE.Prepared": "Prepared",
   "SIMPLE.Expert": "Expert",
-  "SIMPLE.Standard": "Standard"
+  "SIMPLE.Normal": "Normal",
+
+  "SIMPLE.LasersRoll": "Lasers Roll",
+  "SIMPLE.FeelingsRoll": "Feelings Roll"
 }

@@ -1,4 +1,5 @@
 import { ATTRIBUTE_TYPES } from "./constants.js";
+import { evaluateRolls } from "./lasersandfeelings.js";
 
 /**
  * Extend the basic ActorSheet with some very simple modifications
@@ -33,14 +34,27 @@ export class SimpleActorSheet extends ActorSheet {
     
     super.activateListeners(html);
 
-    // Handle rollable attributes.
+    //localizing labels on the character sheet
+    $(html).parents('.app').find('.numbersLabel')[0].innerText = game.i18n.localize("SIMPLE.Number");
+    $(html).parents('.app').find('#styleLabel')[0].innerText = game.i18n.localize("SIMPLE.Style");
+    $(html).parents('.app').find('#roleLabel')[0].innerText = game.i18n.localize("SIMPLE.Role");
+    $(html).parents('.app').find('#goalLabel')[0].innerText = game.i18n.localize("SIMPLE.Goal");
+
+    $(html).parents('.app').find('#lasersButton1')[0].innerText = game.i18n.localize("SIMPLE.Normal");
+    $(html).parents('.app').find('#lasersButton2')[0].innerText = game.i18n.localize("SIMPLE.Prepared");
+    $(html).parents('.app').find('#lasersButton3')[0].innerText = game.i18n.localize("SIMPLE.Expert");
+    $(html).parents('.app').find('#feelingsButton1')[0].innerText = game.i18n.localize("SIMPLE.Normal");
+    $(html).parents('.app').find('#feelingsButton2')[0].innerText = game.i18n.localize("SIMPLE.Prepared");
+    $(html).parents('.app').find('#feelingsButton3')[0].innerText = game.i18n.localize("SIMPLE.Expert");
+
+    //Lasers rolls
     html.find('#lasersButton1').click(ev => {
       let button = $(ev.currentTarget);
       let r = new Roll("1d6");
       r.roll().toMessage({
         user: game.user._id,
         speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-        flavor: `<h3>Lasers Roll: ${button.text()}</h3>`
+        flavor: `<h3>${game.i18n.localize("SIMPLE.LasersRoll")}: ${button.text()}</h3>`
       });
     });
 
@@ -50,7 +64,7 @@ export class SimpleActorSheet extends ActorSheet {
       r.roll().toMessage({
         user: game.user._id,
         speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-        flavor: `<h3>Lasers Roll: ${button.text()}</h3>`
+        flavor: `<h3>${game.i18n.localize("SIMPLE.LasersRoll")}: ${button.text()}</h3>`
       });
     });
 
@@ -60,17 +74,17 @@ export class SimpleActorSheet extends ActorSheet {
       r.roll().toMessage({
         user: game.user._id,
         speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-        flavor: `<h3>Lasers Roll: ${button.text()}</h3>`
+        flavor: `<h3>${game.i18n.localize("SIMPLE.LasersRoll")}: ${button.text()}</h3>`
       });
     });
-
+//Feelings rolls
     html.find('#feelingsButton1').click(ev => {
       let button = $(ev.currentTarget);
       let r = new Roll("1d6");
       r.roll().toMessage({
         user: game.user._id,
         speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-        flavor: `<h3>Feelings Roll: ${button.text()}</h3>`
+        flavor: `<h3>${game.i18n.localize("SIMPLE.FeelingsRoll")}: ${button.text()}</h3>`
       });
     });
 
@@ -80,7 +94,7 @@ export class SimpleActorSheet extends ActorSheet {
       r.roll().toMessage({
         user: game.user._id,
         speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-        flavor: `<h3>Feelings Roll: ${button.text()}</h3>`
+        flavor: `<h3>${game.i18n.localize("SIMPLE.FeelingsRoll")}: ${button.text()}</h3>`
       });
     });
 
@@ -90,7 +104,7 @@ export class SimpleActorSheet extends ActorSheet {
       r.roll().toMessage({
         user: game.user._id,
         speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-        flavor: `<h3>Feelings Roll: ${button.text()}</h3>`,
+        flavor: `<h3>${game.i18n.localize("SIMPLE.FeelingsRoll")}: ${button.text()}</h3>`,
       });
     });
 

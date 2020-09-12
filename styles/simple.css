@@ -142,6 +142,7 @@
 
 .laf .sheet-body .editor-content {
   background: #f5f5f5;
+  padding: 5px;
 }
 
 .laf .sheet-body .editor {
@@ -259,7 +260,7 @@
   height: 50%;
 }
 .laf.sheet.actor {
-  min-width: 632px;
+  min-width: 665px;
   min-height: 640px;
 }
 .laf.sheet.item {

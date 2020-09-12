@@ -15,15 +15,18 @@ import { preloadHandlebarsTemplates } from "./templates.js";
 /* -------------------------------------------- */
 
 Hooks.once("init", async function() {
+ 
   console.log("Localization...");
-  game.i18n.localize("SIMPLE.Name");
-  game.i18n.localize("SIMPLE.Style");
-  game.i18n.localize("SIMPLE.Goal");
-  game.i18n.localize("SIMPLE.Number");
-  game.i18n.localize("SIMPLE.Role");
+  game.settings.register("laf", "Name", {
+    name: "SIMPLE.Name",
+    hint: "SIMPLE.Name",
+    scope: "world",
+    type: String,
+    default: true,
+    config: true
+  });
 
   console.log(`Initializing Lasers & Feelings System`);
-
   /**
    * Set an initiative formula for the system. This will be updated later.
    * @type {String}

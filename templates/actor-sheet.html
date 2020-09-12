@@ -4,26 +4,26 @@
   <header class="sheet-header">
       <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100" />
       <div class="header-fields">
-          <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name" /></h1>
+          <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="{{localize SIMPLE.Name}}" /></h1>
 
           <div class="subfields">
             <div class="subfieldsBlock">
               <span class="lasersLabel">Lasers</span>
-              <button id="lasersButton1" class= "lasersButton" type="button">Standard</button>
-              <button id="lasersButton2" class= "lasersButton" type="button">Prepared</button>
-              <button id="lasersButton3" class= "lasersButton" type="button">Expert</button>
+              <button id="lasersButton1" class= "lasersButton" type="button">{{localize SIMPLE.Normal}}</button>
+              <button id="lasersButton2" class= "lasersButton" type="button">{{localize SIMPLE.Prepared}}</button>
+              <button id="lasersButton3" class= "lasersButton" type="button">{{localize SIMPLE.Expert}}</button>
             </div>
 
             <div class="subfieldsBlock">
-              <span class="numbersLabel">Number</span>
-              <input class="numberinput" name="data.theOnlyStat" value="{{data.theOnlyStat}}" data-dtype="Number" placeholder="{{localize SIMPLE.Number}}Number"></select>
+              <span class="numbersLabel">{{localize SIMPLE.Number}}</span>
+              <input class="numberinput" name="data.theOnlyStat" value="{{data.theOnlyStat}}" data-dtype="Number" placeholder="{{localize SIMPLE.Number}}"></select>
             </div>
 
             <div class="subfieldsBlock">
               <span class="feelingsLabel">Feelings</span>
-              <button id="feelingsButton1" class= "feelingsButton" type="button">Standard</button>
-              <button id="feelingsButton2" class= "feelingsButton" type="button">Prepared</button>
-              <button id="feelingsButton3" class= "feelingsButton" type="button">Expert</button>
+              <button id="feelingsButton1" class= "feelingsButton" type="button">{{localize SIMPLE.Normal}}</button>
+              <button id="feelingsButton2" class= "feelingsButton" type="button">{{localize SIMPLE.Prepared}}</button>
+              <button id="feelingsButton3" class= "feelingsButton" type="button">{{localize SIMPLE.Expert}}</button>
             </div>
           </div>
 
@@ -38,29 +38,29 @@
 <!-- Columns begin here -->
           <div class="column">
               <div class="bodyfieldsLabel">
-                  <span>{{localize SIMPLE.Style}}Style: </span>
+                  <span id="styleLabel">{{localize SIMPLE.Style}}: </span>
               </div>
 
               <div class="bodyfieldsLabel">
-                  <span>{{localize SIMPLE.Role}}Role: </span>
+                  <span id="roleLabel">{{localize SIMPLE.Role}}: </span>
               </div>
 
               <div class="bodyfieldsLabel">
-                  <span>{{localize SIMPLE.Goal}}Goal: </span>
+                  <span id="goalLabel">{{localize SIMPLE.Goal}}: </span>
               </div>
           </div>
 
           <div class="column">
               <div class="bodyfields">
-                  <input class="styleinput" name="data.style" type="text" value="{{data.style}}" placeholder="Style" />
+                  <input class="styleinput" name="data.style" type="text" value="{{data.style}}" placeholder="{{localize SIMPLE.Style}}" />
               </div>
 
               <div class="bodyfields">
-                  <input class="roleinput" name="data.role" type="text" value="{{data.role}}" placeholder="Role" />
+                  <input class="roleinput" name="data.role" type="text" value="{{data.role}}" placeholder="{{localize SIMPLE.Role}}" />
               </div>
 
               <div class="bodyfields">
-                  <input class="goalinput" name="data.goal" type="text" value="{{data.goal}}" placeholder="Goal" />
+                  <input class="goalinput" name="data.goal" type="text" value="{{data.goal}}" placeholder="{{localize SIMPLE.Goal}}" />
               </div>
           </div>
           <!-- Columns ends here -->

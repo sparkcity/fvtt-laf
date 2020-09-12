@@ -1,6 +1,5 @@
-Hooks.once('init', async function() { 
-    console.log('... Localization ...');
+function evaluateRolls(r) {
+    console.log(r);
+}
 
-
-
-});
+export {evaluateRolls};

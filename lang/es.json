@@ -14,11 +14,17 @@
     "SIMPLE.DefineTemplate": "Define as Template",
     "SIMPLE.UnsetTemplate": "Unset Template",
     "SIMPLE.NoTemplate": "No Template",
-  
+
     "SIMPLE.Name": "Nombre",
     "SIMPLE.Number": "Número",
     "SIMPLE.Role": "Rol",
     "SIMPLE.Goal": "Objetivo",
-    "SIMPLE.Style": "Estilo"
+    "SIMPLE.Style": "Estilo",
   
+    "SIMPLE.Prepared": "Preparado",
+    "SIMPLE.Expert": "Experto",
+    "SIMPLE.Normal": "Normal",
+
+    "SIMPLE.LasersRoll": "Tirada de Lasers",
+    "SIMPLE.FeelingsRoll": "Tirada de Feelings"
   }
