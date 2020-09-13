@@ -26,5 +26,7 @@
   "SIMPLE.Normal": "Normal",
 
   "SIMPLE.LasersRoll": "Lasers Roll",
-  "SIMPLE.FeelingsRoll": "Feelings Roll"
+  "SIMPLE.FeelingsRoll": "Feelings Roll",
+
+  "SIMPLE.Successes": "Successes"
 }

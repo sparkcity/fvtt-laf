@@ -16,7 +16,7 @@
     "SIMPLE.NoTemplate": "No Template",
 
     "SIMPLE.Name": "Nombre",
-    "SIMPLE.Number": "Número",
+    "SIMPLE.Number": "Numero",
     "SIMPLE.Role": "Rol",
     "SIMPLE.Goal": "Objetivo",
     "SIMPLE.Style": "Estilo",
@@ -26,5 +26,7 @@
     "SIMPLE.Normal": "Normal",
 
     "SIMPLE.LasersRoll": "Tirada de Lasers",
-    "SIMPLE.FeelingsRoll": "Tirada de Feelings"
+    "SIMPLE.FeelingsRoll": "Tirada de Feelings",
+
+    "SIMPLE.Successes": "Éxitos"
   }

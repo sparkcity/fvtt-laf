@@ -267,4 +267,12 @@
   min-width: 460px;
   min-height: 400px;
 }
-/* */
+/*edited from foundry style.css*/
+.dice-tooltip .dice-rolls .roll.min {
+ color: black;
+ filter: sepia(0.0);
+}
+.dice-tooltip .dice-rolls .roll.max {
+  color: black;
+  filter: sepia(0.0);
+}

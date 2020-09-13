@@ -47,6 +47,7 @@ export class SimpleActorSheet extends ActorSheet {
     $(html).parents('.app').find('#feelingsButton2')[0].innerText = game.i18n.localize("SIMPLE.Prepared");
     $(html).parents('.app').find('#feelingsButton3')[0].innerText = game.i18n.localize("SIMPLE.Expert");
 
+    var num = $(html).parents('.app').find('.numberinput')[0].value;
     //Lasers rolls
     html.find('#lasersButton1').click(ev => {
       let button = $(ev.currentTarget);
@@ -56,6 +57,11 @@ export class SimpleActorSheet extends ActorSheet {
         speaker: ChatMessage.getSpeaker({ actor: this.actor }),
         flavor: `<h3>${game.i18n.localize("SIMPLE.LasersRoll")}: ${button.text()}</h3>`
       });
+
+        ChatMessage.create({
+        speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+        content: evaluateRolls(r,num, 1),
+      });
     });
 
     html.find('#lasersButton2').click(ev => {
@@ -64,8 +70,13 @@ export class SimpleActorSheet extends ActorSheet {
       r.roll().toMessage({
         user: game.user._id,
         speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-        flavor: `<h3>${game.i18n.localize("SIMPLE.LasersRoll")}: ${button.text()}</h3>`
+        flavor: `<h3>${game.i18n.localize("SIMPLE.LasersRoll")}: ${button.text()}</h3>`,
       });
+
+      ChatMessage.create({
+        speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+        content: evaluateRolls(r,num, 1),
+      });    
     });
 
     html.find('#lasersButton3').click(ev => {
@@ -76,6 +87,11 @@ export class SimpleActorSheet extends ActorSheet {
         speaker: ChatMessage.getSpeaker({ actor: this.actor }),
         flavor: `<h3>${game.i18n.localize("SIMPLE.LasersRoll")}: ${button.text()}</h3>`
       });
+
+      ChatMessage.create({
+        speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+        content: evaluateRolls(r,num, 1),
+      });    
     });
 //Feelings rolls
     html.find('#feelingsButton1').click(ev => {
@@ -86,6 +102,11 @@ export class SimpleActorSheet extends ActorSheet {
         speaker: ChatMessage.getSpeaker({ actor: this.actor }),
         flavor: `<h3>${game.i18n.localize("SIMPLE.FeelingsRoll")}: ${button.text()}</h3>`
       });
+
+      ChatMessage.create({
+        speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+        content: evaluateRolls(r,num, 0),
+      });    
     });
 
     html.find('#feelingsButton2').click(ev => {
@@ -96,6 +117,11 @@ export class SimpleActorSheet extends ActorSheet {
         speaker: ChatMessage.getSpeaker({ actor: this.actor }),
         flavor: `<h3>${game.i18n.localize("SIMPLE.FeelingsRoll")}: ${button.text()}</h3>`
       });
+
+      ChatMessage.create({
+        speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+        content: evaluateRolls(r,num, 0),
+      });    
     });
 
     html.find('#feelingsButton3').click(ev => {
@@ -106,6 +132,11 @@ export class SimpleActorSheet extends ActorSheet {
         speaker: ChatMessage.getSpeaker({ actor: this.actor }),
         flavor: `<h3>${game.i18n.localize("SIMPLE.FeelingsRoll")}: ${button.text()}</h3>`,
       });
+
+      ChatMessage.create({
+        speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+        content: evaluateRolls(r,num, 0),
+      });    
     });
 
   }//end of activatelisteners
