@@ -95,14 +95,14 @@
 
 .laf .sheet-header .lasersButton{
   font-family: Atmospheric;
-  background: #007dac;
-  border: 1px solid #00aeef;
+  background: #00aeef;
+  border: 1px solid #007dac;
 }
 
 .laf .sheet-header .feelingsButton{
   font-family: Atmospheric;
-  background: #00aeef;
-  border: 1px solid #007dac;
+  background: #007dac;
+  border: 1px solid #00aeef;
 }
 
 .column {
