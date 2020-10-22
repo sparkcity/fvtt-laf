@@ -1,4 +1,4 @@
-[![Foundry](https://img.shields.io/badge/Foundry-0.6.5-green)](https://foundryvtt.com/)
+[![Foundry](https://img.shields.io/badge/Foundry-0.7.5-brightgreen)](https://foundryvtt.com/)
 ![GitHub All Releases](https://img.shields.io/github/downloads/sparkcity/fvtt-laf/total)
 
 # Lasers & Feelings

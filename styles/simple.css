@@ -15,7 +15,7 @@
   overflow-y: hidden;
 }
 .laf .sheet-header {
-  height: 175px;
+  height: 115px;
   overflow: hidden;
   display: flex;
   flex-direction: row;
@@ -44,20 +44,21 @@
   margin: 0;
 }
 
-.laf .sheet-header .feelingsLabel{
+.laf .sheet-header a.feelings{
   font-family: Atmospheric;
-  padding-left: 15px;
+  padding: 20px;
+  color: #007dac;
 }
 
-.laf .sheet-header .lasersLabel{
+.laf .sheet-header a.lasers{
   font-family: Atmospheric;
-  padding-left: 25px;
+  padding: 20px;
+  color: #00aeef;
 }
 
 .laf .sheet-header .numbersLabel{
   font-family: Atmospheric;
 }
-
 
 .laf .sheet-header .subfields {
   display: flex;
@@ -66,7 +67,7 @@
 
 .laf .sheet-header .subfields .subfieldsBlock {
   width: 100%;
-  margin-right: 60px;
+  margin-top: 15px;
 }
 
 .laf .sheet-header .subfields .subfieldsBlock select {
@@ -95,14 +96,14 @@
 
 .laf .sheet-header .lasersButton{
   font-family: Atmospheric;
-  background: #00aeef;
-  border: 1px solid #007dac;
+  background: #007dac;
+  border: 1px solid #00aeef;
 }
 
 .laf .sheet-header .feelingsButton{
   font-family: Atmospheric;
-  background: #007dac;
-  border: 1px solid #00aeef;
+  background: #00aeef;
+  border: 1px solid #007dac;
 }
 
 .column {
@@ -146,7 +147,7 @@
 }
 
 .laf .sheet-body .editor {
-  height: 200px;
+  height: 220px;
   background: #f5f5f5;
 }
 
@@ -170,8 +171,7 @@
   height: 100%;
   overflow-y: auto;
 }
-.laf .editor,
-.laf .editor-content {
+.laf .editor {
   height: 100px;
   border: 2px solid #007dac;
 
@@ -261,7 +261,7 @@
 }
 .laf.sheet.actor {
   min-width: 665px;
-  min-height: 640px;
+  min-height: 600px;
 }
 .laf.sheet.item {
   min-width: 460px;
@@ -275,4 +275,15 @@
 .dice-tooltip .dice-rolls .roll.max {
   color: black;
   filter: sepia(0.0);
+}
+
+/*chat cards for rolls*/
+.message-content p.roll.success {
+  color: green;
+  font-weight: bold;
+}
+
+.message-content p.roll.laserfeelings {
+  color: #00aeef;
+  font-weight: bold;
 }
