@@ -1,0 +1,32 @@
+{
+  "SETTINGS.SimpleMacroShorthandN": "Sintaxe de Macro Abreviada",
+  "SETTINGS.SimpleMacroShorthandL": "Habilite uma sintaxe de macro abreviada que permite referenciar atributos diretamente, por exemplo @str ao invés de @attributes.str.value. Desative esta configuração se precisar fazer referência ao modelo de atributo completo, por exemplo @attributes.str.label.",
+  "SETTINGS.SimpleInitFormulaN": "Fórmula de Iniciativa",
+  "SETTINGS.SimpleInitFormulaL": "Coloque uma fórmula de inciativa, por exemplo d20+@dex",
+
+  "SIMPLE.NotifyInitFormulaUpdated": "Fórmula de iniciativa foi atualizada para:",
+  "SIMPLE.NotifyInitFormulaInvalid": "Fórmula de iniciativa estava inválida:",
+
+  "SIMPLE.ResourceMin": "Min",
+  "SIMPLE.ResourceValue": "Valor",
+  "SIMPLE.ResourceMax": "Máx",
+
+  "SIMPLE.DefineTemplate": "Define as Template",
+  "SIMPLE.UnsetTemplate": "Unset Template",
+  "SIMPLE.NoTemplate": "No Template",
+
+  "SIMPLE.Name": "Nome",
+  "SIMPLE.Number": "Número",
+  "SIMPLE.Role": "Papel",
+  "SIMPLE.Goal": "Objetivo",
+  "SIMPLE.Style": "Estilo",
+
+  "SIMPLE.Prepared": "Preparado",
+  "SIMPLE.Expert": "Especialista",
+  "SIMPLE.Normal": "Normal",
+
+  "SIMPLE.LasersRoll": "Rolagem de Lasers",
+  "SIMPLE.FeelingsRoll": "Rolagem de Sentimentos",
+
+  "SIMPLE.Successes": "Sucessos"
+}
